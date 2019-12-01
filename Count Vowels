@@ -1,0 +1,20 @@
+public class HelloWorld{
+
+     public static void main(String []args){
+        HelloWorld hw = new HelloWorld();
+        System.out.println(hw.numberOfVowels("ShubhamaEiOu"));
+     }
+     public int numberOfVowels(String s){
+         if(s == null){
+             return 0;
+         }
+         int count = 0;
+         String vowels = "aeiou";
+         for(char ch : s.trim().toLowerCase().toCharArray()){
+             if(vowels.indexOf(ch) != -1){
+                 count++;
+             }
+         }
+         return count;
+     }
+}
