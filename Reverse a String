@@ -1,0 +1,40 @@
+import java.util.*;
+public class HelloWorld{
+
+     public static void main(String []args){
+        HelloWorld hw = new HelloWorld();
+        System.out.println(hw.reverseUsingStringBuffer("Hello"));
+        System.out.println(hw.reverseUsingIteration("Hello"));
+        System.out.println(hw.reverseUsingStack("Hello"));
+     }
+     public String reverseUsingStringBuffer(String s){
+         if(s == null){
+             return "";
+         }
+         return new StringBuffer(s).reverse().toString();
+     }
+     public String reverseUsingIteration(String s){
+         if(s == null){
+             return "";
+         }
+         String rev = "";
+         for(char ch : s.toCharArray()){
+             rev = ch + rev;
+         }
+         return rev;
+     }
+     public String reverseUsingStack(String s){
+         if(s == null){
+             return "";
+         }
+         Stack<Character> stack = new Stack<>();
+         for(char ch : s.toCharArray()){
+             stack.push(ch);
+         }
+         String rev = "";
+         while(!stack.isEmpty()){
+             rev += stack.pop();
+         }
+         return rev;
+     }
+}
