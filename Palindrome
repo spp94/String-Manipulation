@@ -1,0 +1,31 @@
+import java.util.*;
+public class HelloWorld{
+
+     public static void main(String []args){
+        HelloWorld hw = new HelloWorld();
+    System.out.println(hw.isPalindrome(" MADaM "));
+    System.out.println(hw.isPalindrome_(" MAdAM "));
+     }
+     //O(n) 
+    public boolean isPalindrome(String a){
+        if(a == null){
+            return false;
+        }
+        a = a.trim().toLowerCase();
+        return a.equals(new StringBuilder(a).reverse().toString());
+    }
+    // O(n/2) = O(n)  faster than anove method
+    public boolean isPalindrome_(String a){
+        if(a == null){
+            return false;
+        }
+        a = a.trim().toLowerCase();
+        int left = 0, right = a.length() - 1;
+        while(left < right){
+            if(a.charAt(left++) != a.charAt(right--)){
+                return false;
+            } 
+        }
+        return true;
+    }
+}
