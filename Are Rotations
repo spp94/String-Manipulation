@@ -1,0 +1,14 @@
+import java.util.*;
+public class HelloWorld{
+
+     public static void main(String []args){
+        HelloWorld hw = new HelloWorld();
+        System.out.println(hw.isRotationImage("ABCD", "DABC"));
+     }
+    public boolean isRotationImage(String a, String b){
+        if(a == null || b == null){
+            return false;
+        }
+        return (a.length() == b.length() && (a + a).contains(b));
+    }
+}
