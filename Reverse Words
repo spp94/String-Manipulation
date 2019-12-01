@@ -1,0 +1,28 @@
+import java.util.*;
+public class HelloWorld{
+
+     public static void main(String []args){
+        HelloWorld hw = new HelloWorld();
+        System.out.println(hw.reverseWords("I Love my India"));
+        System.out.println(hw.reverseWords_("I Love my India"));
+     }
+    public String reverseWords(String s){
+        if( s == null){
+            return "";
+        }
+        String rev = "";
+        String[] words = s.trim().split(" ");
+        for(String word : words){
+            rev = word + " " + rev;
+        }
+        return rev;
+    }
+    public String reverseWords_(String s){
+        if(s == null){
+            return "";
+        }
+        String[] words = s.trim().split(" ");
+        Collections.reverse(Arrays.asList(words));
+        return String.join(" ", words);
+    }
+}
