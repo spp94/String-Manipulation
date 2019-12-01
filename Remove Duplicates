@@ -1,0 +1,22 @@
+import java.util.*;
+public class HelloWorld{
+
+     public static void main(String []args){
+        HelloWorld hw = new HelloWorld();
+        System.out.println(hw.removeDuplicates("Shubham"));
+     }
+    public String removeDuplicates(String s){
+        if(s == null){
+            return "";
+        }
+        Set<Character> set = new HashSet<>();
+        String result = "";
+        for(char ch : s.trim().toCharArray()){
+            if(!set.contains(ch)){
+                result = result + ch;
+            }
+            set.add(ch);
+        }
+        return result;
+    }
+}
