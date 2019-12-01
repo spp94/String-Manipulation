@@ -1,0 +1,20 @@
+import java.util.*;
+public class HelloWorld{
+
+     public static void main(String []args){
+        HelloWorld hw = new HelloWorld();
+    System.out.println(hw.stringCapitalization(" trees are beautiful "));
+     }
+    public String stringCapitalization(String s){
+        if(s == null){
+            return "";
+        }
+        s = s.trim().replace(" ","<>").replace("><","").replace("<>"," ");
+        String[] words = s.toLowerCase().split(" ");
+        String result = "";
+        for(String word : words){
+            result += ((Character.toString(word.charAt(0))).toUpperCase()) + word.substring(1) + " ";
+        }
+        return result;
+    }
+}
