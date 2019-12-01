@@ -1,0 +1,28 @@
+import java.util.*;
+public class HelloWorld{
+
+     public static void main(String []args){
+        HelloWorld hw = new HelloWorld();
+        System.out.println(hw.mostRepeatedCharacter("abbccc"));
+     }
+    public char mostRepeatedCharacter(String s){
+        char maxChar = ' ';
+        if(s == null){
+            return maxChar;
+        }
+        Map<Character, Integer> map = new HashMap<>();
+        for(char ch : s.trim().toCharArray()){
+            int count = (map.containsKey(ch) ? map.get(ch) + 1 : 1);
+            map.put(ch, count);
+        }
+        int maxCount = 0;
+        
+        for(char ch : map.keySet()){
+            if(map.get(ch) > maxCount){
+                maxCount = map.get(ch);
+                maxChar = ch;
+            }
+        }
+        return maxChar;
+    }
+}
